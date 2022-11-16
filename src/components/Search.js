@@ -30,6 +30,11 @@ const Search = () => {
         justifyContent="space-around"
         w={'70vw'}
         mt={4}
+        border="1px"
+        borderRadius={10}
+        borderColor={'gray.400'}
+        py="4"
+        px="2"
       >
         <Box p={2}>
           <Text>Location</Text>

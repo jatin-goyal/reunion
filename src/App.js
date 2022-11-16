@@ -5,6 +5,10 @@ import Search from './components/Search';
 import Cards from './components/Cards';
 
 function App() {
+  fetch('https://dummyjson.com')
+    .then(res => res.json())
+    .then(json => console.log(json));
+
   return (
     <ChakraProvider theme={theme}>
       <Box>
