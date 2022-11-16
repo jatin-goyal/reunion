@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <Box display="flex" alignItems="center" justifyContent="space-between">
       <Box display="flex" alignItems="center">
-        <Image src={logo} alt="logo" boxSize="120px" objectFit="cover" />
+        <Image src={logo} alt="logo" boxSize="100px" objectFit="cover" />
         <Stack direction="row" spacing={4} align="center">
           <Button colorScheme="teal" variant="ghost" fontSize={'lg'}>
             Rent
@@ -69,7 +69,7 @@ const NavBar = () => {
         <Button colorScheme="teal" variant="solid" mx={2}>
           Sign Up
         </Button>
-        <ColorModeSwitcher mx={2} />
+        <ColorModeSwitcher mr={3} />
       </Box>
     </Box>
   );
