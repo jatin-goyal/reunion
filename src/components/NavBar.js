@@ -20,20 +20,20 @@ const NavBar = () => {
       <Box display="flex" alignItems="center">
         <Image src={logo} alt="logo" boxSize="100px" objectFit="cover" />
         <Stack direction="row" spacing={4} align="center">
-          <Button colorScheme="teal" variant="ghost" fontSize={'lg'}>
+          <Button colorScheme="purple" variant="ghost" fontSize={'lg'}>
             Rent
           </Button>
-          <Button colorScheme="teal" variant="ghost" fontSize={'lg'}>
+          <Button colorScheme="purple" variant="ghost" fontSize={'lg'}>
             Buy
           </Button>
-          <Button colorScheme="teal" variant="ghost" fontSize={'lg'}>
+          <Button colorScheme="purple" variant="ghost" fontSize={'lg'}>
             Sell
           </Button>
           <Menu>
             <MenuButton
               as={Button}
               rightIcon={<ChevronDownIcon />}
-              colorScheme="teal"
+              colorScheme="purple"
               variant="ghost"
               fontSize={'lg'}
             >
@@ -49,7 +49,7 @@ const NavBar = () => {
             <MenuButton
               as={Button}
               rightIcon={<ChevronDownIcon />}
-              colorScheme="teal"
+              colorScheme="purple"
               variant="ghost"
               fontSize={'lg'}
             >
@@ -65,8 +65,10 @@ const NavBar = () => {
       </Box>
       <Spacer />
       <Box>
-        <Button mx={2}>Log In</Button>
-        <Button colorScheme="teal" variant="solid" mx={2}>
+        <Button mx={2} colorScheme="purple" variant="outline">
+          Log In
+        </Button>
+        <Button colorScheme="purple" variant="solid" mx={2}>
           Sign Up
         </Button>
         <ColorModeSwitcher mr={3} />
