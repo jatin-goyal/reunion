@@ -1,3 +1,4 @@
+import React from 'react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -10,7 +11,6 @@ import {
   MenuList,
   MenuItem,
 } from '@chakra-ui/react';
-import React from 'react';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import logo from '../images/logo.png';
 

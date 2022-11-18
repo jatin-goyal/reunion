@@ -1,7 +1,21 @@
-import { Box, Button, Input, Select, Spacer, Text } from '@chakra-ui/react';
-import React from 'react';
+import {
+  Box,
+  Button,
+  Input,
+  Select,
+  Spacer,
+  Text,
+  useToast,
+} from '@chakra-ui/react';
+import React, { useState } from 'react';
 
-const Search = () => {
+const Search = ({ setFilteredHouses, houses, filteredHouses }) => {
+  const [location, setLocation] = useState('All');
+  const [price, setPrice] = useState(20000);
+  const [rooms, setRooms] = useState(1);
+
+  const toast = useToast();
+
   return (
     <Box
       pt={5}
@@ -38,17 +52,17 @@ const Search = () => {
       >
         <Box p={2}>
           <Text>Location</Text>
-          <Select placeholder="Select Location">
-            <option value="option1">Delhi</option>
-            <option value="option2">Maharastra</option>
-            <option value="option3">Karnataka</option>
-            <option value="option3">West Bengal</option>
-            <option value="option3">Tamil Nadu</option>
-            <option value="option3">Gujrat</option>
-            <option value="option3">Uttar Pradesh</option>
-            <option value="option3">Haryana</option>
-            <option value="option3">Rajasthan</option>
-            <option value="option3">Utrakhand</option>
+          <Select
+            placeholder="Select Location"
+            onChange={e => setLocation(e.target.value)}
+            name="location"
+          >
+            <option value="All">All</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="West Bengal">West Bengal</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
           </Select>
         </Box>
 
@@ -58,21 +72,31 @@ const Search = () => {
         </Box>
         <Box p={2}>
           <Text>Price</Text>
-          <Select placeholder="Select Range">
-            <option value="option1">Below ₹1999</option>
-            <option value="option2"> ₹2000 - ₹4999</option>
-            <option value="option2"> ₹5000 - ₹9999</option>
-            <option value="option3">Above ₹10000</option>
+          <Select
+            placeholder="Select Range"
+            onChange={e => setPrice(e.target.value)}
+          >
+            <option value="All">All</option>
+            <option value="2000">Below ₹1999</option>
+            <option value="5000"> ₹2000 - ₹4999</option>
+            <option value="10000"> ₹5000 - ₹9999</option>
+            <option value="20000">Above ₹10000</option>
           </Select>
         </Box>
+
         <Box p={2}>
           <Text>Type</Text>
-          <Select placeholder="Select type">
-            <option value="option1">1 BHK</option>
-            <option value="option2">2 - 4 BHK</option>
-            <option value="option3">Above 4 BHK</option>
+          <Select
+            placeholder="Select type"
+            onChange={e => setRooms(e.target.value)}
+          >
+            <option value="All">All</option>
+            <option value="1">1 BHK</option>
+            <option value="2">2 BHK</option>
+            <option value="3">3 BHK</option>
           </Select>
         </Box>
+
         <Box>
           <Button colorScheme="purple" variant="solid" fontSize={'lg'}>
             Search

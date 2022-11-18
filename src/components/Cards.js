@@ -3,15 +3,13 @@ import React from 'react';
 
 import Card from './Card';
 
-const Cards = () => {
+const Cards = ({ filteredHouses }) => {
   return (
     <Box pt={5} display={'flex'} alignItems={'center'} justifyContent="center">
       <Box w="70vw" display={'flex'} flexWrap="wrap">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {filteredHouses?.map(house => (
+          <Card house={house} key={house.houseId} />
+        ))}
       </Box>
     </Box>
   );
