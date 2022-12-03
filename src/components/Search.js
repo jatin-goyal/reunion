@@ -8,13 +8,27 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { useList } from '../context/ListContext';
 
-const Search = ({ setFilteredHouses, houses, filteredHouses }) => {
-  const [location, setLocation] = useState('All');
-  const [price, setPrice] = useState(20000);
-  const [rooms, setRooms] = useState(1);
-
+const Search = () => {
+  const {
+    location,
+    price,
+    rooms,
+    setLocation,
+    setPrice,
+    setRooms,
+    filteredHouses,
+    setFilteredHouses,
+  } = useList();
   const toast = useToast();
+
+  const handleSubmit = () => {
+    if (location == '' || rooms == '' || price == '') {
+      toast({ title: 'Fill all the fields', status: 'error', timeout: 3000 });
+      return;
+    }
+  };
 
   return (
     <Box
@@ -76,11 +90,11 @@ const Search = ({ setFilteredHouses, houses, filteredHouses }) => {
             placeholder="Select Range"
             onChange={e => setPrice(e.target.value)}
           >
-            <option value="All">All</option>
-            <option value="2000">Below ₹1999</option>
-            <option value="5000"> ₹2000 - ₹4999</option>
-            <option value="10000"> ₹5000 - ₹9999</option>
-            <option value="20000">Above ₹10000</option>
+            <option value={0}>All</option>
+            <option value={1}>Below ₹1999</option>
+            <option value={2}> ₹2000 - ₹4999</option>
+            <option value={3}> ₹5000 - ₹9999</option>
+            <option value={4}>Above ₹10000</option>
           </Select>
         </Box>
 
@@ -90,15 +104,20 @@ const Search = ({ setFilteredHouses, houses, filteredHouses }) => {
             placeholder="Select type"
             onChange={e => setRooms(e.target.value)}
           >
-            <option value="All">All</option>
-            <option value="1">1 BHK</option>
-            <option value="2">2 BHK</option>
-            <option value="3">3 BHK</option>
+            <option value={0}>All</option>
+            <option value={1}>1 BHK</option>
+            <option value={2}>2 BHK</option>
+            <option value={3}>3 BHK</option>
           </Select>
         </Box>
 
         <Box>
-          <Button colorScheme="purple" variant="solid" fontSize={'lg'}>
+          <Button
+            colorScheme="purple"
+            variant="solid"
+            fontSize={'lg'}
+            onClick={handleSubmit}
+          >
             Search
           </Button>
         </Box>

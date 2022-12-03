@@ -7,7 +7,7 @@
       "baths": 2,
       "title": "House 1",
       "state": "Delhi",
-      "housePrice": "1,000",
+      "housePrice": 1000,
       "reviewCount": 3,
       "rating": 4,
       "houseId": 1
@@ -19,7 +19,7 @@
       "baths": 2,
       "title": "House 2",
       "state": "Delhi",
-      "housePrice": "2,000",
+      "housePrice": 2000,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 2
@@ -31,7 +31,7 @@
       "baths": 2,
       "title": "House 3",
       "state": "Maharastra",
-      "housePrice": "3,900",
+      "housePrice": 3900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 3
@@ -43,7 +43,7 @@
       "baths": 2,
       "title": "House 4",
       "state": "Maharastra",
-      "housePrice": "4,900",
+      "housePrice": 4900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 4
@@ -55,7 +55,7 @@
       "baths": 1,
       "title": "House 5",
       "state": "Karnataka",
-      "housePrice": "5,900",
+      "housePrice": 5900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 5
@@ -67,7 +67,7 @@
       "baths": 2,
       "title": "House 6",
       "state": "Karnataka",
-      "housePrice": "1,900",
+      "housePrice": 1900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 6
@@ -79,7 +79,7 @@
       "baths": 2,
       "title": "House 7",
       "state": "West Bengal",
-      "housePrice": "6,900",
+      "housePrice": 6900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 7
@@ -91,7 +91,7 @@
       "baths": 1,
       "title": "House 8",
       "state": "West Bengal",
-      "housePrice": "7,900",
+      "housePrice": 7900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 8
@@ -103,7 +103,7 @@
       "baths": 1,
       "title": "House 9",
       "state": "Tamil Nadu",
-      "housePrice": "8,900",
+      "housePrice": 8900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 9
@@ -115,7 +115,7 @@
       "baths": 2,
       "title": "House 10",
       "state": "Tamil Nadu",
-      "housePrice": "9,900",
+      "housePrice": 9900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 10
@@ -127,7 +127,7 @@
       "baths": 1,
       "title": "House 11",
       "state": "Delhi",
-      "housePrice": "10,900",
+      "housePrice": 10900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 11
@@ -139,7 +139,7 @@
       "baths": 1,
       "title": "House 12",
       "state": "Delhi",
-      "housePrice": "11,900",
+      "housePrice": 11900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 12
@@ -151,7 +151,7 @@
       "baths": 2,
       "title": "House 13",
       "state": "Maharastra",
-      "housePrice": "1,500",
+      "housePrice": 1500,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 13
@@ -163,7 +163,7 @@
       "baths": 1,
       "title": "House 14",
       "state": "Maharastra",
-      "housePrice": "12,000",
+      "housePrice": 12000,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 14
@@ -175,7 +175,7 @@
       "baths": 1,
       "title": "House 15",
       "state": "West Bengal",
-      "housePrice": "13,900",
+      "housePrice": 13900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 15
@@ -187,7 +187,7 @@
       "baths": 2,
       "title": "House 16",
       "state": "West Bengal",
-      "housePrice": "3,900",
+      "housePrice": 3900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 16
@@ -199,7 +199,7 @@
       "baths": 1,
       "title": "House 17",
       "state": "Tamil Nadu",
-      "housePrice": "1,900",
+      "housePrice": 1900,
       "reviewCount": 34,
       "rating": 4,
       "houseId": 17

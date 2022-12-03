@@ -1,9 +1,11 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
+import { useList } from '../context/ListContext';
 
 import Card from './Card';
 
-const Cards = ({ filteredHouses }) => {
+const Cards = () => {
+  const { filteredHouses } = useList();
   return (
     <Box pt={5} display={'flex'} alignItems={'center'} justifyContent="center">
       <Box w="70vw" display={'flex'} flexWrap="wrap">

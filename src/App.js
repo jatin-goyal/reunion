@@ -3,10 +3,10 @@ import { ChakraProvider, Box, theme, Divider } from '@chakra-ui/react';
 import NavBar from './components/NavBar';
 import Search from './components/Search';
 import Cards from './components/Cards';
+import { useList } from './context/ListContext';
 
 function App() {
-  const [houses, setHouses] = useState([]);
-  const [filteredHouses, setFilteredHouses] = useState([]);
+  const { houses, setHouses, filteredHouses, setFilteredHouses } = useList();
 
   useEffect(() => {
     fetch('/property.json')
@@ -23,12 +23,8 @@ function App() {
       <Box>
         <NavBar />
         <Divider />
-        <Search
-          setFilteredHouses={setFilteredHouses}
-          houses={houses}
-          filteredHouses={filteredHouses}
-        />
-        <Cards filteredHouses={filteredHouses} />
+        <Search />
+        <Cards />
       </Box>
     </ChakraProvider>
   );
