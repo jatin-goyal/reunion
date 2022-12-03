@@ -18,16 +18,88 @@ const Search = () => {
     setLocation,
     setPrice,
     setRooms,
+    houses,
     filteredHouses,
     setFilteredHouses,
+    locationHouses,
+    setLocationHouses,
+    budgetHouses,
+    setBudgetHouses,
+    bhkHouses,
+    setBhkHouses,
   } = useList();
+
   const toast = useToast();
 
   const handleSubmit = () => {
     if (location == '' || rooms == '' || price == '') {
       toast({ title: 'Fill all the fields', status: 'error', timeout: 3000 });
       return;
+    } else {
+      console.log(location);
+      console.log(price);
+      console.log(rooms);
+      filterList();
+
+      setFilteredHouses(bhkHouses);
     }
+  };
+
+  const filterList = () => {
+    if (location === 'All') {
+      setLocationHouses(houses);
+    } else {
+      setLocationHouses(() => houses.filter(house => house.state == location));
+    }
+
+    switch (price) {
+      case '0':
+        setBudgetHouses(locationHouses);
+        break;
+      case '1':
+        setBudgetHouses(() =>
+          locationHouses.filter(house => house.housePrice < 2000)
+        );
+        break;
+      case '2':
+        setBudgetHouses(() =>
+          locationHouses.filter(
+            house => house.housePrice >= 2000 && house.housePrice < 5000
+          )
+        );
+        break;
+      case '3':
+        setBudgetHouses(() =>
+          locationHouses.filter(
+            house => house.housePrice >= 5000 && house.housePrice < 10000
+          )
+        );
+        break;
+      case '4':
+        setBudgetHouses(() =>
+          locationHouses.filter(
+            house => house.housePrice >= 10000 && house.housePrice < 20000
+          )
+        );
+        break;
+    }
+
+    switch (rooms) {
+      case '0':
+        setBhkHouses(budgetHouses);
+        break;
+      case '1':
+        setBhkHouses(() => budgetHouses.filter(house => house.beds === 1));
+        break;
+      case '2':
+        setBhkHouses(() => budgetHouses.filter(house => house.beds === 2));
+        break;
+      case '3':
+        setBhkHouses(() => budgetHouses.filter(house => house.beds === 3));
+        break;
+    }
+
+    console.log(bhkHouses);
   };
 
   return (
