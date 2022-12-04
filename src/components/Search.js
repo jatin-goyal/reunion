@@ -29,7 +29,9 @@ const Search = () => {
   let arrayToFilter = [...houses];
 
   const handleQuery = () => {
-    handleSubmit();
+    if (location != '' && rooms != '' && price != '') {
+      handleSubmit();
+    }
 
     if (query === '') {
       arrayToFilter = [...arrayToFilter];
