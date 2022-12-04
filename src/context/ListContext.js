@@ -10,6 +10,7 @@ export function ListProvider({ children }) {
   const [location, setLocation] = useState('All');
   const [price, setPrice] = useState(0);
   const [rooms, setRooms] = useState(0);
+  const [query, setQuery] = useState('');
 
   return (
     <ListContext.Provider
@@ -24,6 +25,8 @@ export function ListProvider({ children }) {
         setPrice,
         rooms,
         setRooms,
+        query,
+        setQuery,
       }}
     >
       {children}

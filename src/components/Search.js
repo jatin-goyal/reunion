@@ -7,7 +7,7 @@ import {
   Text,
   useToast,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useList } from '../context/ListContext';
 
 const Search = () => {
@@ -19,13 +19,28 @@ const Search = () => {
     setPrice,
     setRooms,
     houses,
-    filteredHouses,
     setFilteredHouses,
+    query,
+    setQuery,
   } = useList();
 
   const toast = useToast();
 
   let arrayToFilter = [...houses];
+
+  const handleQuery = () => {
+    if (query === '') {
+      arrayToFilter = [...houses];
+    } else {
+      arrayToFilter = arrayToFilter.filter(
+        house =>
+          house.title.toLowerCase().includes(query.toLowerCase()) ||
+          house.state.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+
+    setFilteredHouses(arrayToFilter);
+  };
 
   const handleSubmit = () => {
     if (location == '' || rooms == '' || price == '') {
@@ -88,6 +103,10 @@ const Search = () => {
     }
   };
 
+  useEffect(() => {
+    handleQuery();
+  }, [query]);
+
   return (
     <Box
       pt={5}
@@ -107,7 +126,13 @@ const Search = () => {
           Search properties to rent
         </Text>
         <Spacer />
-        <Input w="20vw" placeholder="Search with search bar"></Input>
+        {/* search bar */}
+        <Input
+          w="20vw"
+          placeholder="Search with search bar"
+          onChange={e => setQuery(e.target.value)}
+        />
+        {/* search bar */}
       </Box>
       <Box
         display="flex"

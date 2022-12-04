@@ -14,7 +14,6 @@ function App() {
       .then(data => {
         setHouses(data.houses);
         setFilteredHouses(data.houses);
-        console.log(filteredHouses);
       });
   }, []);
 
