@@ -11,19 +11,9 @@ export function ListProvider({ children }) {
   const [price, setPrice] = useState(0);
   const [rooms, setRooms] = useState(0);
 
-  const [locationHouses, setLocationHouses] = useState();
-  const [budgetHouses, setBudgetHouses] = useState();
-  const [bhkHouses, setBhkHouses] = useState();
-
   return (
     <ListContext.Provider
       value={{
-        bhkHouses,
-        setBhkHouses,
-        budgetHouses,
-        setBudgetHouses,
-        locationHouses,
-        setLocationHouses,
         houses,
         setHouses,
         filteredHouses,

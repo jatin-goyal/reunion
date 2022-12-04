@@ -3,7 +3,14 @@ import { Badge, Box, Image } from '@chakra-ui/react';
 
 function Card({ house }) {
   return (
-    <Box w="300px" borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
+    <Box
+      w="300px"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      m="4"
+      cursor={'pointer'}
+    >
       <Image src={house.imageUrl} alt={house.imageAlt} />
 
       <Box p="6">
