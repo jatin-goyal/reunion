@@ -29,8 +29,10 @@ const Search = () => {
   let arrayToFilter = [...houses];
 
   const handleQuery = () => {
+    handleSubmit();
+
     if (query === '') {
-      arrayToFilter = [...houses];
+      arrayToFilter = [...arrayToFilter];
     } else {
       arrayToFilter = arrayToFilter.filter(
         house =>
@@ -43,6 +45,7 @@ const Search = () => {
   };
 
   const handleSubmit = () => {
+    console.log('function called');
     if (location == '' || rooms == '' || price == '') {
       toast({ title: 'Fill all the fields', status: 'error', timeout: 3000 });
       return;
